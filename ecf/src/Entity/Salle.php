@@ -16,13 +16,11 @@ class Salle
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $id_salle = null;
 
-    #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
     #[ORM\Column]
-    private ?int $capacité = null;
+    private ?int $capacite = null;
 
     #[ORM\OneToOne(mappedBy: 'salles', cascade: ['persist', 'remove'])]
     private ?Reservation $reservation = null;
@@ -48,18 +46,8 @@ class Salle
         return $this->id;
     }
 
-    public function getIdSalle(): ?string
-    {
-        return $this->id_salle;
-    }
-
-    public function setIdSalle(string $id_salle): self
-    {
-        $this->id_salle = $id_salle;
-
-        return $this;
-    }
-
+    
+   
     public function getNom(): ?string
     {
         return $this->nom;
@@ -72,14 +60,14 @@ class Salle
         return $this;
     }
 
-    public function getCapacité(): ?int
+    public function getCapacite(): ?int
     {
-        return $this->capacité;
+        return $this->capacite;
     }
 
-    public function setCapacité(int $capacité): self
+    public function setCapacite(int $capacite): self
     {
-        $this->capacité = $capacité;
+        $this->capacite = $capacite;
 
         return $this;
     }
