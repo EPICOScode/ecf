@@ -1,7 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Home
+{% endblock %}
 
 {% block body %}
-        
+	{% include 'partials/homePartials.html.twig' %}
+	{% include 'partials/sallesPartials.html.twig' %}
+
 {% endblock %}

@@ -1,21 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nos salles{% endblock %}
+{% block title %}Nos salles
+{% endblock %}
 
 {% block body %}
-    <h1>Nos salles</h1>
-    {% if salles is not empty %}
-        <ul>
-            {% for salle in salles %}
-                <li>{{ salle.nom }}</li>
-                <ul>
-                    <li>Capacité : {{ salle.capacite }}</li>
-                    <li>Tarif : {{ salle.tarif }}</li>
-                    <li><a href="{{ path('reservation', {'id': salle.id}) }}">Réserver</a></li>
-                </ul>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>Aucune salle disponible.</p>
-    {% endif %}
+<h1>Nos salles</h1>
+		    {% if salles is not empty %}
+		        <ul>
+		            {% for salle in salles %}
+		                <li>{{ salle.nom }}</li>
+		                <ul>
+		                    <li>Capacité : {{ salle.capacite }}</li>
+		                    <li>Tarif : {{ salle.tarif }}</li>
+		                    <li><a href="{{ path('reservation', {'id': salle.id}) }}">Réserver</a></li>
+		                </ul>
+		            {% endfor %}
+		        </ul>
+		    {% else %}
+		        <p>Aucune salle disponible.</p>
+		    {% endif %}
 {% endblock %}
