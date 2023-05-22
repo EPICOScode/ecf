@@ -9,13 +9,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SallesController extends AbstractController
 {
-    #[Route('/salles', name: 'salles')]
-    public function index(): Response
+    #[Route('/salles', name: 'salles', methods: ['GET'])]
+    public function index(SalleRepository $salles): Response
     {
-        $salles = $this->getDoctrine()->getRepository(Salle::class)->findAll();
-        
         return $this->render('salles/salles.html.twig', [
-            'salles' => $salles,
+            'controller_name' => 'SallesController',
+            'salles' => $salles->findAll(),
+            // dd($projects->findAll())
         ]);
     }
 }
