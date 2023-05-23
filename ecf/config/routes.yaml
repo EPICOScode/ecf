@@ -4,8 +4,3 @@ controllers:
         namespace: App\Controller
     type: attribute
 
-reservation:
-    path: '/reservation/{id}'
-    controller: App\Controller\ReservationController::reserver
-
-    
