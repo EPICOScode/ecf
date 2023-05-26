@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Salle;
+use App\Repository\SalleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;

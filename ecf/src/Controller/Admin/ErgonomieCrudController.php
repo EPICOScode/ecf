@@ -4,6 +4,9 @@ namespace App\Controller\Admin;
 
 use App\Entity\Ergonomie;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+
 
 class ErgonomieCrudController extends AbstractCrudController
 {
@@ -12,14 +15,14 @@ class ErgonomieCrudController extends AbstractCrudController
         return Ergonomie::class;
     }
 
-    /*
+
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            IdField::new('id')->hideOnForm(),
+            BooleanField::new('lumierjour'),
+            BooleanField::new('lumierearti'),
         ];
     }
-    */
+
 }

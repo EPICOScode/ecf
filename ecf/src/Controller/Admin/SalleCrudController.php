@@ -2,6 +2,8 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Ergonomie;
+use App\Entity\Materiels;
 use App\Entity\Logiciels;
 use App\Entity\Salle;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -25,9 +27,12 @@ class SalleCrudController extends AbstractCrudController
             NumberField::new("capacite")
                 ->setColumns(1),
             AssociationField::new("logiciels")
-                ->hideOnIndex()
-                ->setCrudController(Logiciels::class)
-            // ->renderAsNativeWidget() 
+                ->setCrudController(Logiciels::class),
+            AssociationField::new("ergonomie")
+                ->setCrudController(Ergonomie::class),
+            AssociationField::new("materiels")
+                ->setCrudController(Materiels::class)
+
         ];
     }
 

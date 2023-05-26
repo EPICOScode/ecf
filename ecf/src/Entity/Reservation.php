@@ -72,6 +72,18 @@ class Reservation
         return $this;
     }
 
+    public function getTitle(): ?string // Added getter for 'title' property
+    {
+        return $this->title;
+    }
+
+    public function setTitle(?string $title): self // Added setter for 'title' property
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
     public function getUser(): ?User
     {
         return $this->user;
@@ -95,4 +107,5 @@ class Reservation
 
         return $this;
     }
+
 }

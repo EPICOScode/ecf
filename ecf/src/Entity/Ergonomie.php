@@ -25,7 +25,7 @@ class Ergonomie
     private ?bool $lumierjour = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $lumierearti = null;
+    private ?bool $lumierearti = null;
 
     #[ORM\ManyToMany(targetEntity: Salle::class, mappedBy: 'ergonomie')]
     private Collection $salles;
@@ -81,7 +81,7 @@ class Ergonomie
         return $this->lumierearti;
     }
 
-    public function setLumierearti(string $lumierearti): self
+    public function setLumierearti(bool $lumierearti): self
     {
         $this->lumierearti = $lumierearti;
 
@@ -113,5 +113,10 @@ class Ergonomie
         }
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return (string) $this->id_ergo;
     }
 }
